@@ -1,1 +1,22 @@
-/* write your override styles here */
+div.tag-1,
+div#wall #tag-2,
+div#wall div#tag-3.slick,
+#wall .parent #tag-4,
+div#wall .parent div#tag-5.slick,
+body div#wall div.parent div:last-child div#tag-6, /* I played with this
+ for a very long time only to find that the shortest solution is to just
+ whack "body" in front of what they already had (div:nth-child(2)) has
+ equal specificity */
+body div#wall div.parent div div#tag-7.slick {
+    display:none;
+}
+/* I think the end result is supposed to leave the last two tags in, but
+I removed them just to see if I could do it with specificity
+but if that was the desired end result you could just to this:
+
+ div.tag-1,
+ div#wall #tag-2,
+ div#wall div#tag-3.slick,
+.parent{
+    display: none;
+ } */
